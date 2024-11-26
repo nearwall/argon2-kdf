@@ -4,6 +4,7 @@ fn main() {
     let supports_simd = cfg!(target_arch = "x86_64");
 
     let simd_src_file = if supports_simd {
+        println!("SIMD instruction will be used");
         "phc-winner-argon2-20190702/src/opt.c"
     } else {
         "phc-winner-argon2-20190702/src/ref.c"
