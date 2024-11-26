@@ -132,4 +132,4 @@ mod hasher;
 mod lexer;
 
 pub use error::Argon2Error;
-pub use hasher::{Algorithm, Hash, Hasher, Secret};
+pub use hasher::{Algorithm, Hash, Hasher, Secret, SIMD_INSTRUCTIONS_USED};

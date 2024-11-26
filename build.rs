@@ -61,4 +61,13 @@ fn main() {
     bindings
         .write_to_file(bindings_out_path)
         .expect("Couldn't write argon2 library bindings");
+
+    std::fs::write(
+        std::path::Path::new(&out_dir).join("argon2_constants.rs"),
+        format!(
+            "/// C-library SIMD instructions usage\n\
+            pub const SIMD_INSTRUCTIONS_USED: bool = {supports_simd};\n"
+        ),
+    )
+    .expect("Couldn't write argon2 bindings constants");
 }

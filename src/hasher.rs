@@ -14,6 +14,8 @@ use crate::bindings::{
     Argon2_ErrorCodes_ARGON2_OK, Argon2_version_ARGON2_VERSION_13,
 };
 
+include!(concat!(env!("OUT_DIR"), "/argon2_constants.rs"));
+
 /// The Argon2 spec consist of 3 different algorithms: one that aims to be resistant to GPU
 /// cracking attacks (argon2d), one that aims to be resistant to side-channel attacks
 /// (argon2i), and a hybrid algorithm that aims to be resistant to both types of attacks.
